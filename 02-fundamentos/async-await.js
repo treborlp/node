@@ -15,11 +15,12 @@ let calcularAreaCirculo = (radio) => {
     });
 }
 
-/*calcularAreaCirculo(-5).then(area => {
-    console.log(`El area del circulo es: ${area}`);
+calcularAreaCirculo(3).then(area => {
+    //console.log(`El area del circulo es: ${area}`);
+    console.log("la promesa retorna:", area);
 }, (err) => {
     console.log(err);
-})*/
+})
 
 //Ejemplo de promesa usando Async - await
 //Async permite abstraer el uso de las promesas de manera implicita 
