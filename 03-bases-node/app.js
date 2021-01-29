@@ -1,10 +1,12 @@
 const { calcularTabla } = require('./multiplicar/multiplicar')
+const argv = require("yargs").argv
 
 //console.log(process.argv);
-let argv = process.argv[2];
+console.log(process.argv);
+console.log(argv)
 
-let base = argv.split("=")[1];
+//let base = argv.split("=")[1];
 
-calcularTabla(base)
+/*calcularTabla(base)
     .then(archivo => console.log(`${archivo} creado`))
-    .catch(errores => console.log(errores))
+    .catch(errores => console.log(errores))*/
