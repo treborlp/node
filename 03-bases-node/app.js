@@ -1,16 +1,5 @@
-//Imported
-const fs = require("fs");
+const { calcularTabla } = require('./multiplicar/multiplicar')
 
-let base = 5;
-
-let tabla = "";
-
-for (let i = 1; i <= 12; i++) {
-    tabla += `${base} * ${i} = ${base*i} \n`
-}
-
-fs.writeFile(`tablas/tabla-${base}`, tabla, (err) => {
-    if (err) throw err;
-
-    console.log(`El archivo tabla-${base} fue creado con exito.`);
-})
+calcularTabla("abc")
+    .then(archivo => console.log(`${archivo} creado`))
+    .catch(err => console.log(err))
