@@ -1,17 +1,18 @@
 //Imported
 const fs = require("fs");
+const colors = require("colors")
 
-let calcularTabla = (base, createFile) => {
+let calcularTabla = (base, createFile, limite) => {
 
     return new Promise((resolve, reject) => {
-        if (!Number(base)) {
-            return reject(`${base}: no es un número`)
+        if (!Number(base) || !Number(limite)) {
+            return reject(`${base} o ${limite}: no es un número`)
         }
         let tabla = "";
 
-        for (let i = 1; i <= 12; i++) {
+        for (let i = 1; i <= limite; i++) {
             tabla += `${base} * ${i} = ${base*i} \n`
-            console.log(`${base} * ${i} = ${base*i}`);
+            console.log(`${base} * ${i}` + " = ".trap + `${base*i}`);
         }
 
         let mensaje = `Se creo el archivo de la tabla ${base}`;

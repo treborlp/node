@@ -7,6 +7,6 @@ const argv = require('./config/yargs')
 
 
 console.log(argv.l);
-calcularTabla(argv.b, argv.l)
+calcularTabla(argv.b, argv.l, argv.h)
     .then(msj => console.log(msj))
     .catch(errores => console.log(errores))
