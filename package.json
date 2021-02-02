@@ -18,6 +18,7 @@
   "homepage": "https://github.com/treborlp/node#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "inquirer": "^7.3.3",
     "yargs": "^16.2.0"
   }
 }
