@@ -1,4 +1,4 @@
-const argv = require("./config/yargs").argv;
+/*const argv = require("./config/yargs").argv;
 const porHacer = require("./todo/porHacer");
 
 let comando = argv._[0]
@@ -18,4 +18,13 @@ switch (comando) {
     default:
         console.log('El comando no existe');
         break;
+}*/
+
+
+require('colors')
+console.clear();
+const main = async() => {
+    console.log("Hola Mundo");
 }
+
+main();
