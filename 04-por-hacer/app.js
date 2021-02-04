@@ -2,6 +2,7 @@ require('colors')
     //const { mostrarMenu, pausa } = require('./helpers/mensajes')
 const { inquirerMenu, pausa, leerInput } = require('./helpers/Inquirer');
 const Tareas = require('./models/tareas');
+const { guardarDatos } = require('./helpers/guardarArchivo')
 
 
 console.clear();
@@ -36,9 +37,9 @@ const main = async() => {
             case '0':
                 console.log('salir');
                 break
-
         }
-        //console.log({ opt });
+        guardarDatos(tareas.listadoArr)
+            //console.log({ opt });
 
         await pausa();
     } while (opt !== '0')
