@@ -2,7 +2,7 @@ require('colors')
     //const { mostrarMenu, pausa } = require('./helpers/mensajes')
 const { inquirerMenu, pausa, leerInput } = require('./helpers/Inquirer');
 const Tareas = require('./models/tareas');
-const { guardarDatos } = require('./helpers/guardarArchivo')
+const { guardarDatos, leerArchivo } = require('./helpers/guardarArchivo')
 
 
 console.clear();
@@ -10,6 +10,14 @@ console.clear();
 const main = async() => {
     let opt = '';
     let tareas = new Tareas();
+    const data = leerArchivo();
+
+    if (data) {
+        data.forEach(element => console.log(element));
+    }
+
+    await pausa();
+
     do {
         // opt = await mostrarMenu();
         opt = await inquirerMenu();
@@ -41,7 +49,6 @@ const main = async() => {
         guardarDatos(tareas.listadoArr)
             //console.log({ opt });
 
-        await pausa();
     } while (opt !== '0')
 
     //pausa();
