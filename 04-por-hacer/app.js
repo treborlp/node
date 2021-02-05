@@ -13,11 +13,11 @@ const main = async() => {
     const data = leerArchivo();
 
     if (data) {
-        data.forEach(element => console.log(element));
+        tareas.cargarTareasFromArr(data);
+        // console.log(tareas._listado);
     }
 
-    await pausa();
-
+    // await pausa();
     do {
         // opt = await mostrarMenu();
         opt = await inquirerMenu();
@@ -29,6 +29,7 @@ const main = async() => {
                 break;
             case '2':
                 console.log(tareas.listadoArr);
+                // console.log(tareas._listado);
                 break;
             case '3':
                 console.log('3');
@@ -48,8 +49,9 @@ const main = async() => {
         }
         guardarDatos(tareas.listadoArr)
             //console.log({ opt });
-
+        await pausa();
     } while (opt !== '0')
+
 
     //pausa();
 }

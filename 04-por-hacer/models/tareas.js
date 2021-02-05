@@ -17,6 +17,12 @@ class Tareas {
         let tarea = new Tarea(desc);
         this._listado[tarea.id] = tarea
     }
+
+    cargarTareasFromArr(tareas = []) {
+        tareas.forEach(tarea => {
+            this._listado[tarea.id] = tarea
+        })
+    }
 }
 
 module.exports = Tareas
