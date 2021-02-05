@@ -28,8 +28,7 @@ const main = async() => {
                 tareas.crearTarea(tarea);
                 break;
             case '2':
-                console.log(tareas.listadoArr);
-                // console.log(tareas._listado);
+                tareas.listadoCompleto()
                 break;
             case '3':
                 console.log('3');
