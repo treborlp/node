@@ -40,6 +40,27 @@ class Tareas {
             numeracion++;
         })
     }
+
+    listarPendientesCompletadas(completadas = true) {
+        let numeracion = 0
+
+        if (completadas) {
+
+            this.listadoArr.forEach((tarea, index) => {
+                if (tarea.completadoEn) {
+                    numeracion++;
+                    console.log(`${numeracion.toString().green}. ${tarea.desc} :: ${'Completada'.green}`);
+                }
+            })
+        } else {
+            this.listadoArr.forEach((tarea, index) => {
+                if (!tarea.completadoEn) {
+                    numeracion++;
+                    console.log(`${numeracion.toString().green}. ${tarea.desc} :: ${'Pendiente'.red}`);
+                }
+            })
+        }
+    }
 }
 
 module.exports = Tareas
