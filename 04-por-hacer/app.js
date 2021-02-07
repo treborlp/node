@@ -1,6 +1,6 @@
 require('colors')
     //const { mostrarMenu, pausa } = require('./helpers/mensajes')
-const { inquirerMenu, pausa, leerInput } = require('./helpers/Inquirer');
+const { inquirerMenu, pausa, leerInput, listadoTareasBorrar } = require('./helpers/Inquirer');
 const Tareas = require('./models/tareas');
 const { guardarDatos, leerArchivo } = require('./helpers/guardarArchivo')
 
@@ -40,7 +40,8 @@ const main = async() => {
                 console.log('object');
                 break;
             case '6':
-                console.log('6');
+                const id = await listadoTareasBorrar(tareas.listadoArr)
+                console.log({ id });
                 break
             case '0':
                 console.log('salir');
